@@ -4,9 +4,10 @@ import qr from 'qr-image';
 import fs from 'fs';
 import path from 'path';
 import bodyParser from 'body-parser';
+import env from 'dotenv';
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
@@ -36,8 +37,8 @@ app.post('/generate-qr', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 inquirer
