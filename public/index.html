@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>QR Code Generator</h1>
+      <form id="qr-form">
+        <label for="url-input">Enter URL:</label>
+
+        <input type="text" id="url-input" name="url" required />
+        <select id="format-select" name="format">
+          <option value="png">PNG</option>
+          <option value="pdf">PDF</option>
+        </select>
+        <br />
+        <br />
+        <br />
+        <button type="submit">Generate QR Code</button>
+      </form>
+      <a id="download-link" style="display: none">Download QR Code</a>
+      <img id="qr-code-img" alt="QR Code" />
+      <iframe
+        id="pdf-viewer"
+        style="display: none"
+        width="100%"
+        height="600"
+      ></iframe>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
